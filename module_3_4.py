@@ -11,26 +11,23 @@ result2 = single_root_words('Disablement', 'Able', 'Mable', 'Disable', 'Bagel')
 print(result1)
 print(result2)
 calls = 0# я уже выполнял это задание, вместе с ним отправляю задание которым его заменили
-def count_calls():
-    global calls
-    calls += 1
-    return calls
-def string_info(string):
-    b =(len(string), string.upper(), string.lower())
-    calls = count_calls()
-    return (b)
-def is_contains(string, list_to_search):
-    for i in range(len(list_to_search)):
-        if string.lower() == list_to_search[i].lower() or string.upper() == list_to_search[i].upper():
-            calls = count_calls()
-            return True
+
+
+def send_email(recipient, sender='university.help@gmail.com'):
+    if '@' not in sender or not sender.endswith(("com", ".ru", ".net")):
+        print(f"Невозможно отправить письмо с адреса <{sender}> на адрес <{recipient}>.")
+    elif '@' not in sender or not sender.endswith(("com", ".ru", ".net")):
+        print(f"Невозможно отправить письмо с адреса <{sender}> на адрес <{recipient}>.")
+    elif sender == recipient:
+        print("Нельзя отправить письмо самому себе!")
+    elif sender == 'university.help@gmail.com':
+        print(f"Письмо успешно отправлено с адреса <{sender}> на адрес <{recipient}>.")
     else:
-        calls = count_calls()
-        return False
+        print(f"НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса <{sender}> на адрес <{recipient}>.")
 
-
-print(string_info('Armstrong'))
-print(string_info('Armmageddon'))
-print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))
+send_email(recipient= 'orion.pax37@gmail.com')
+send_email(recipient='university.help@gmail.com')
+send_email(recipient='university.gmail.com')
+send_email(recipient='university.gmail')
 print(is_contains('cycle', ['recycling', 'cyclic']))
 print(calls)
