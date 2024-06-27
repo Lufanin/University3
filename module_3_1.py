@@ -1,20 +1,12 @@
 calls = 0
-
-
 def count_calls():
     global calls
     calls += 1
     return calls
-
-
-def string_info(a):
-    b = len(a)
-    c = a.upper()
-    d = a.lower()
+def string_info(string):
+    b =(len(string), string.upper(), string.lower())
     calls = count_calls()
-    return (b, c, d)
-
-
+    return (b)
 def is_contains(string, list_to_search):
     for i in range(len(list_to_search)):
         if string.lower() == list_to_search[i].lower() or string.upper() == list_to_search[i].upper():
